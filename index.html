@@ -23,8 +23,8 @@
     <div id="app" class="container py-5">
          <div > 
             <ul>
-                <li>
-                    {{email}}
+                <li v-for="(element, index) in email" :key="index">
+                    {{ element }}
                 </li>
             </ul>
     
