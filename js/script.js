@@ -4,20 +4,21 @@ createApp({
     data() {
         return {
 
-            email: "",
-            numberOfIterations: 10,
+            email: [],
 
         }
     },
 
     mounted() {
+        for (let i=0; i<10; i++) {
+            axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((result) => {
 
-        axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((result) => {
+            this.email.push(result.data.response);
+                
+            });
+        }
 
-            console.log(result)
-
-            this.email = result.data.response
-        });
+        console.log(this.email);
     }
 
 }).mount("#app");
