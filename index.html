@@ -23,11 +23,13 @@
     <div id="app" class="container py-5">
          <div > 
             <ul v-if="email.length >= 10">
-                <li v-for="(element, index) in email">
+                <li v-for="(element, index) in email"
+                class="alert alert-primary d-flex align-items-center">
+                    <i class="fa-regular fa-paper-plane ms-2 me-4"></i>
                     {{ element }}
                 </li>
             </ul>
-            <div v-else>
+            <div v-else class="badge text-bg-warning">
                 Loading...
             </div>
     
