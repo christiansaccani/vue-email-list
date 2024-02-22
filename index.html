@@ -22,11 +22,14 @@
 
     <div id="app" class="container py-5">
          <div > 
-            <ul>
-                <li v-for="(element, index) in email" :key="index">
+            <ul v-if="email.length >= 10">
+                <li v-for="(element, index) in email">
                     {{ element }}
                 </li>
             </ul>
+            <div v-else>
+                Loading...
+            </div>
     
         </div>
 
